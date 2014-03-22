@@ -15,8 +15,8 @@ function dialog_frame.new( txt, l_img, r_img, l_name, r_name, aud, frame_duratio
   local f = {}
 
   f.text = some_texts[love.math.random(5)]
-  f.left_image = love.graphics.newImage("corgi.png")
-  f.right_image = love.graphics.newImage("barkleysircharles.png")
+  f.left_image = love.graphics.newImage("assets/portraits/corgi.png")
+  f.right_image = love.graphics.newImage("assets/portraits/barkleysircharles.png")
   f.left_name = "Indignant Corgi"
   f.right_name = "Barkley"
   f.audio = "laugh_satan_1.wav"
