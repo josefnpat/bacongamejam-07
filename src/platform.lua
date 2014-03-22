@@ -46,10 +46,12 @@ function platform:draw()
   self.map:draw()
   self.player:draw()
 
-  for y,yv in pairs(self.map_col.data) do
-    for x,xv in pairs(yv) do
-      if xv == 1 then
-        love.graphics.rectangle("line",(x-1)*16,(y-1)*16,16,16)
+  if debugmode then
+    for y,yv in pairs(self.map_col.data) do
+      for x,xv in pairs(yv) do
+        if xv == 1 then
+          love.graphics.rectangle("line",(x-1)*16,(y-1)*16,16,16)
+        end
       end
     end
   end
@@ -57,7 +59,7 @@ function platform:draw()
 end
 
 function platform.on_collision(dt,shape_a,shape_b,mtv_x,mtv_y)
---  print(string.format("Colliding. mtv = (%s,%s)",mtv_x, mtv_y))
+  --print(string.format("Colliding. mtv = (%s,%s)",mtv_x, mtv_y))
   -- sort out which one our hero shape is
   local hero_shape
   local hero = global_platform.player.hc_obj
@@ -81,11 +83,11 @@ function platform.on_collision(dt,shape_a,shape_b,mtv_x,mtv_y)
 end
 
 function platform.off_collision(dt, shape_a, shape_b)
+  --print("Stopped colliding")
   if global_platform.player.jump == nil then
     global_platform.player.jump = 0
     global_platform.player.falljump = 0.1
   end
---  print("Stopped colliding")
 end
 
 return platform

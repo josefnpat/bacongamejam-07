@@ -15,7 +15,7 @@ return {
       tileheight = 16,
       spacing = 0,
       margin = 0,
-      image = "hub1.png",
+      image = "hub2.png",
       imagewidth = 256,
       imageheight = 256,
       properties = {},
