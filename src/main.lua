@@ -4,7 +4,7 @@ platformlib = require "platform"
 playerlib = require "player"
 
 function love.load()
-  global_platform = platformlib.new("assets/maps/hub1")
+  global_platform = platformlib.new("assets/maps/level1")
 end
 
 function love.update(dt)

@@ -4,7 +4,7 @@ function player.new(hc)
   local p = {}
 
   p.hc = hc
-  p.hc_obj = hc:addRectangle(30,30,16,32)
+  p.hc_obj = hc:addRectangle(100,100,16,32)
   p.gravity = 100
 
   p.draw = player.draw
