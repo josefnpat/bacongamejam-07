@@ -11,6 +11,9 @@ function player.new(hc)
   p.update = player.update
   p.center = player.center
   p.jump = 0
+
+  p.numKeys = 0
+
   return p
 end
 

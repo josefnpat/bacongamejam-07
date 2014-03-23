@@ -52,6 +52,7 @@ od.makeDefaultObject = function( objName, dispName, imgIndex )
 
   ob.addInventory = function(self)
     self.inInventory = true
+    global_platform.player.numKeys = global_platform.player.numKeys + 1
   end
 
   ob.removeInventory = function(self)
