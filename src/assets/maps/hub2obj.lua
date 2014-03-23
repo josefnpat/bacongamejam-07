@@ -5,7 +5,7 @@ door:addToMap( "hub1", 19, 10 )
 door.nearby = function()
   global_dialogue = dialoguelib.new({
       dialog_frame.new(
-        "I fell alseep? I have so much to get done. I can't spend my time\nhavingdreams about getting a fridge food.", -- text
+        "I fell alseep? I have so much to get done. I can't spend my time\nhaving dreams about getting a fridge food.", -- text
         "adrian.png", -- left image
         nil, -- right image
         "Adrian", -- left name
