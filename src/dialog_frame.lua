@@ -1,6 +1,6 @@
 local dialog_frame = { }
 
-local image_dimension = 128
+local image_dimension = 256
 
 function dialog_frame.portrait_path( portrait_name )
   return "assets/portraits/"..portrait_name
@@ -114,24 +114,16 @@ function dialog_frame:draw(x, y, w, h)
   end
 
 
-  love.graphics.setColor( 255, 255, 255, 64 )
-  love.graphics.rectangle( "fill", box_start, y, box_width, h )
-
-  love.graphics.setColor( 255, 255, 255, 128 )
-  love.graphics.rectangle( "fill", box_start + 4, y + 4, box_width - 8, h - 8 )
-
-  love.graphics.setColor( 0, 0, 0, 255 )
-
-  love.graphics.print( self.text, box_start + 12, y + 12 )
-
   love.graphics.setColor( 255, 255, 255, 255 )
+
+  local image_y = y - 24
 
   if self.left_image ~= nil then
 
     if self.is_left_active == false then 
       love.graphics.setColor( 128, 128, 128, 255 )
     end
-    love.graphics.draw( self.left_image, x, y, 0, self.l_img_scale_x, self.l_img_scale_y, 0, image_dimension / self.l_img_scale_y )
+    love.graphics.draw( self.left_image, x, image_y, 0, self.l_img_scale_x, self.l_img_scale_y, 0, image_dimension / self.l_img_scale_y )
   end
 
   love.graphics.setColor( 255, 255, 255, 255 )
@@ -142,8 +134,20 @@ function dialog_frame:draw(x, y, w, h)
       love.graphics.setColor( 128, 128, 128, 255 )
     end
 
-    love.graphics.draw( self.right_image, x + w, y, 0, self.r_img_scale_x, self.r_img_scale_y, 0, image_dimension / self.r_img_scale_y )
+    love.graphics.draw( self.right_image, x + w, image_y, 0, self.r_img_scale_x, self.r_img_scale_y, 0, image_dimension / self.r_img_scale_y )
   end
+
+
+
+  love.graphics.setColor( 255, 255, 255, 64 )
+  love.graphics.rectangle( "fill", box_start, y, box_width, h )
+
+  love.graphics.setColor( 255, 255, 255, 128 )
+  love.graphics.rectangle( "fill", box_start + 4, y + 4, box_width - 8, h - 8 )
+
+  love.graphics.setColor( 0, 0, 0, 255 )
+
+  love.graphics.print( self.text, box_start + 12, y + 12 )
 
   love.graphics.setColor( 255, 255, 255, 255 )
   local name_y = y - 12
