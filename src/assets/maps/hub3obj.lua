@@ -15,7 +15,7 @@ door.nearby = function()
         true -- false for right speaker
       ),
       dialog_frame.new(
-        "Hey, you should take a nap buddy. Ha, just kidding.\nHow about a drink?", -- text
+        "Hey, you should take a nap pal. Ha, just kidding.\nHow about a drink?", -- text
         "adrian.png", -- left image
         "crusty.png", -- right image
         "Adrian", -- left name

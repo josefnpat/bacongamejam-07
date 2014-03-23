@@ -25,7 +25,7 @@ door.nearby = function()
       true -- false for right speaker
     ),
     dialog_frame.new(
-      "Human? Jackass, call me crusty. Crusty the fridge!", -- text
+      "Human? ... Jackass, call me crusty. Crusty the fridge!", -- text
       "adrian.png", -- left image
       "crusty.png", -- right image
       "Adrian", -- left name
@@ -45,7 +45,7 @@ door.nearby = function()
       true -- false for right speaker
     ),
     dialog_frame.new(
-      "Already gave you those, sweety.", -- text
+      "No.", -- text
       "adrian.png", -- left image
       "crusty.png", -- right image
       "Adrian", -- left name
