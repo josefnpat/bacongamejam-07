@@ -59,6 +59,8 @@ function platform:draw()
 end
 
 function platform.on_collision(dt,shape_a,shape_b,mtv_x,mtv_y)
+  mtv_x = math.abs(mtv_x) < 0.000001 and 0 or mtv_x
+  mtv_y = math.abs(mtv_y) < 0.000001 and 0 or mtv_y
   --print(string.format("Colliding. mtv = (%s,%s)",mtv_x, mtv_y))
   -- sort out which one our hero shape is
   local hero_shape
