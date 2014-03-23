@@ -98,7 +98,7 @@ function dialog_frame.new( txt, l_img, r_img, l_name, r_name, aud, frame_duratio
 end
 
 function dialog_frame:draw(x, y, w, h)
-
+  love.graphics.setColor(255,255,255)
   -- a flag that determines whether the text box squishes to one side of the screen or another
   -- set flag if there are two speakers
   local align_text_box = self.left_image ~= nil and self.right_image ~= nil
