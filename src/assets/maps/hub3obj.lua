@@ -22,7 +22,7 @@ door.nearby = function()
         "Fridge", -- right name
         nil, -- audio file
         4, -- length
-        nil -- false for right speaker
+        false -- false for right speaker
       )
   })
   global_dialogue_callback = function()
