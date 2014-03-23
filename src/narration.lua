@@ -8,6 +8,8 @@ function nar.new(text,fade,wait)
   n.wait = wait or 4
   n.draw = nar.draw
   n.update = nar.update
+  n.newkeypress = false
+  n.done = nar.done
   return n
 end
 
@@ -40,7 +42,11 @@ function nar:update(dt)
       self.fade = 0
     end
   end
-  if love.keyboard.isDown("down") or love.keyboard.isDown("return") then
+  local down = love.keyboard.isDown("down") or love.keyboard.isDown("return")
+  if not down then --  HACK HACK HACK
+    self.newkeypress = true
+  end
+  if down and self.newkeypress then
     self.wait = 0
   end
 end
