@@ -13,11 +13,10 @@ function temp:func_select(menu,key)
   GS.switch(states.game)
 end
 temp.print_desc = 
-  "\n\nControls:\n\n"..
+  "\n\nHelp Adrian avoid her depression by feeding her fridge.\n\n"..
+  "Controls:\n"..
   "Arrow keys: move\n"..
   "Space: jump\n"..
-  "Enter: use item\n\n"..
-  "Use your mouse to interact with your inventory.\n\n"..
   "Bacon Game Jam 7"
 table.insert(menuobj.actions,temp)
 
