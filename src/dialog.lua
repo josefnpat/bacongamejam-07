@@ -1,4 +1,4 @@
-local dialog_frame = require("dialog_frame")
+dialog_frame = require("dialog_frame")
 
 local dialog = {}
 
