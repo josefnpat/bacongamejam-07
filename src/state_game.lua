@@ -72,7 +72,7 @@ function game:keypressed(key)
     global_dialogue:skip()
   end
 
-  if key == "`" then
+  if key == "`" and love.keyboard.isDown("rshift") then
     debugmode = not debugmode
   elseif debugmode and (
     key == "1" or
