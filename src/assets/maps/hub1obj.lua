@@ -25,7 +25,9 @@ door.nearby = function()
         nil -- false for right speaker
       )
   })
-  global_platform = platforms.level1
+  global_dialogue_callback = function()
+    global_platform = platforms.level1
+  end
 end
 table.insert(obj,door)
 
