@@ -54,6 +54,7 @@ function dialog_frame.new( txt, l_img, r_img, l_name, r_name, aud, frame_duratio
   end
   if frame_duration ~= nil then f.frame_time = frame_duration
   end
+  frame_duration = string.len(txt)*0.071428571428571 -- HACK HACK HACK HACK
   if is_left_speaking ~= nil then f.is_left_active = is_left_speaking
   end
 
