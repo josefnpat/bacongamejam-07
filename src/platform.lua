@@ -2,6 +2,19 @@ local platform = {}
 objects = require "objects"
 objectsdata = require "objectsdata"
 
+platstart = {
+  level1 = {x=9,y=29},
+  level2 = {x=3,y=27},
+  level3 = {x=16,y=27},
+  level4 = {x=2,y=27},
+  level5 = {x=16,y=27},
+  hub1 = {x=6,y=9},
+  hub2 = {x=6,y=9},
+  hub3 = {x=6,y=9},
+  hub4 = {x=6,y=9},
+  hub5 = {x=6,y=9}
+}
+
 function platform.new(map)
   local p = {}
 
@@ -15,8 +28,15 @@ function platform.new(map)
   p.hc_col = HC(100,
     platform.on_collision,
     platform.off_collision)
-  
-  p.player = playerlib.new(p.hc_col)
+
+  local ps
+  for i,v in pairs(platstart) do
+    if "assets/maps/"..i == map then
+      ps = v
+    end
+  end
+ 
+  p.player = playerlib.new(p.hc_col,(ps.x-1)*16,(ps.y-1)*16)
 
   p.tiles = {}
   for y,yv in pairs(p.map_col.data) do

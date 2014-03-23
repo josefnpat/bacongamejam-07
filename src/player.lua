@@ -1,6 +1,6 @@
 local player = {}
 
-function player.new(hc)
+function player.new(hc,x,y)
   local p = {}
 
   p.img = love.graphics.newImage("assets/player.png")
@@ -12,7 +12,7 @@ function player.new(hc)
   p.stand = love.graphics.newQuad(0,0,16,32,256,256)
 
   p.hc = hc
-  p.hc_obj = hc:addRectangle(100,100,16,32)
+  p.hc_obj = hc:addRectangle(x,y,16,32)
   p.gravity = 100
 
   p.draw = player.draw
