@@ -4,6 +4,7 @@ local door = objectsdata.makeDefaultObject( "door", "Door" )
 door:addToMap( "hub1", 24,16 )
 door.nearby = function()
   global_platform = platforms.hub4
+  global_player.numKeys = 0
   music:nextTrack()
 end
 table.insert(obj,door)
