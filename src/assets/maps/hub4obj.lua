@@ -32,7 +32,7 @@ door.nearby = function()
       "Crusty", -- right name
       nil, -- audio file
       4, -- length
-      nil -- false for right speaker
+      true -- false for right speaker
     ),
     dialog_frame.new(
       "Tell me your secrets, Crusty the fridge!", -- text
@@ -52,7 +52,7 @@ door.nearby = function()
       "Crusty", -- right name
       nil, -- audio file
       4, -- length
-      true -- false for right speaker
+      false -- false for right speaker
     ),
     dialog_frame.new(
       "Alright.", -- text
@@ -62,7 +62,7 @@ door.nearby = function()
       "Crusty", -- right name
       nil, -- audio file
       4, -- length
-      nil -- false for right speaker
+      true -- false for right speaker
     )
   })
   global_dialogue_callback = function()
