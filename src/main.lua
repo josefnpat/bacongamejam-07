@@ -13,6 +13,6 @@ states.menu = require "state_menu"
 states.game = require "state_game"
 
 function love.load()
-    GS.registerEvents()
-    GS.switch(states.menu)
+  GS.registerEvents()
+  GS.switch(states.menu)
 end
