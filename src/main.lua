@@ -10,6 +10,7 @@ dialoguelib = require "dialog"
 menulib = require "menu/menu"
 musiclib = require "music"
 sfx = require "sfx"
+fonts = require "fonts"
 
 music = musiclib.new({
   "assets/1.ogg",

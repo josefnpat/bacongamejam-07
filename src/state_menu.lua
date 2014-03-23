@@ -2,6 +2,11 @@ local menu = {}
 
 function menu:init()
   menu.lib = menulib.new("menudata")
+
+  menu.lib.theme.action.font = fonts.medium
+  menu.lib.theme.desc.font = fonts.small
+  menu.lib.theme.title.font = fonts.large
+
   menu.lib:update(0) -- dirty hack
 end
 
