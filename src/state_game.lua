@@ -28,7 +28,7 @@ function game:init()
 end
 
 function game:update(dt)
-
+  music:update(dt)
   if global_narrative then
     global_narrative:update(dt)
     if global_narrative:done() then

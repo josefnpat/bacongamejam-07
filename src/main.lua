@@ -8,11 +8,18 @@ playerlib = require "player"
 narrationlib = require "narration"
 dialoguelib = require "dialog"
 menulib = require "menu/menu"
+musiclib = require "music"
 sfx = require "sfx"
 
-GS = require "gamestate"
+music = musiclib.new({
+  "assets/1.ogg",
+  "assets/2.ogg",
+  "assets/3.ogg",
+  "assets/4.ogg",
+  "assets/5.ogg"
+})
 
-require "slam"
+GS = require "gamestate"
 
 states = {}
 states.splash = require "state_splash"
