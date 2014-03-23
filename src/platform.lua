@@ -81,12 +81,18 @@ function platform.on_collision(dt,shape_a,shape_b,mtv_x,mtv_y)
   hero_shape:move(mtv_x, 0)
   hero_shape:move(0, mtv_y)
   if mtv_y < 0 and mtv_x == 0 then
-    global_platform.player.jump = nil
+    if global_platform.player.jump then
+      global_platform.player.jump = nil
+      if not sfx.data.land:isPlaying() then
+        sfx.play(sfx.data.land)
+      end
+    end
   end
   if mtv_y > 0 and 
     global_platform.player.jump and
     global_platform.player.jump > 0 then
     global_platform.player.jump = 0
+    sfx.play(sfx.data.ceiling)
   end
 end
 

@@ -35,6 +35,7 @@ function player:update(dt)
     (not self.jump or self.falljump) then
     self.jump = 0.5
     self.falljump = nil
+    sfx.play(sfx.data.jump)
   end
 
   if self.falljump then
@@ -52,7 +53,6 @@ function player:update(dt)
 
   local newx = dt*xvect*100
   self.hc_obj:move(newx,0)
-
 
 end
 
