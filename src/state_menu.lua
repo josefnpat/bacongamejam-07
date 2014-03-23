@@ -4,19 +4,19 @@ function menu:init()
   menu.lib = menulib.new("menudata")
 end
 
-function love.update(dt)
+function menu:update(dt)
   menu.lib:update(dt)
 end
 
-function love.draw()
+function menu:draw()
   menu.lib:draw()
 end
 
-function love.keypressed(key)
+function menu:keypressed(key)
   menu.lib:keypressed(key)
 end
 
-function love.mousepressed(x,y,button)
+function menu:mousepressed(x,y,button)
   menu.lib:mousepressed(x,y,button)
 end
 
