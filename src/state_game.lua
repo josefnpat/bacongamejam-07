@@ -10,21 +10,7 @@ function game:init()
   end
   global_platform = platforms.hub1
   global_narrative = narrationlib.new({
-    "Cannon to right of them,",
-    "Cannon to left of them,",
-    "Cannon in front of them",
-    "Volley'd and thunder'd;",
-    "Storm'd at with shot and shell,",
-    "Boldly they rode and well,",
-    "Into the jaws of Death,",
-    "Into the mouth of Hell",
-    "Rode the six hundred."})
-
-   local conversation_factory = require "conversation_maker"
-   global_dialogue = dialoguelib.new(
-     conversation_factory.make_dialog_1()
-   )
-
+    "re·morse","deep and painful regret for wrongdoing; compunction."})
 end
 
 function game:update(dt)
