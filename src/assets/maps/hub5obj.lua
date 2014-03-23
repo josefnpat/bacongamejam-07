@@ -12,7 +12,7 @@ door.nearby = function()
       nil,
       nil, -- audio file
       4, -- length
-      nil -- false for right speaker
+      true -- false for right speaker
     ),
     dialog_frame.new(
       "Hey! Cheer up, emo! Idle hands are the devil's\nworkshop. Go get a job!", -- text
@@ -22,7 +22,7 @@ door.nearby = function()
       "Crusty", -- right name
       nil, -- audio file
       4, -- length
-      true -- false for right speaker
+      false -- false for right speaker
     ),
     dialog_frame.new(
       "Sure. Cheer up. Keep thinking. If I stop thinking I\nmight ...", -- text
@@ -32,7 +32,7 @@ door.nearby = function()
       "Crusty", -- right name
       nil, -- audio file
       4, -- length
-      nil -- false for right speaker
+      false -- false for right speaker
     )
   })
   global_dialogue_callback = function()

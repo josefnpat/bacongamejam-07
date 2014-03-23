@@ -12,7 +12,7 @@ door.nearby = function()
         nil, -- right name
         nil, -- audio file
         4, -- length
-        nil -- false for right speaker
+        true -- false for right speaker
       ),
       dialog_frame.new(
         "Hey!", -- text
@@ -32,7 +32,7 @@ door.nearby = function()
         "Fridge", -- right name
         nil, -- audio file
         4, -- length
-        nil -- false for right speaker
+        true -- false for right speaker
       )
   })
   global_dialogue_callback = function()

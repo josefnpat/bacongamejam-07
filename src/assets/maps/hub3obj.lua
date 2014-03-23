@@ -12,7 +12,7 @@ door.nearby = function()
         nil, -- right name
         nil, -- audio file
         4, -- length
-        nil -- false for right speaker
+        true -- false for right speaker
       ),
       dialog_frame.new(
         "Hey, you should take a nap buddy. Ha, just kidding.\nHow about a drink?", -- text
