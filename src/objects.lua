@@ -5,9 +5,9 @@ objects.image:setFilter("nearest","nearest")
 
 objects.objectSet = {}
 
-function objects.new( )
+function objects.new(map)
   local objs = {}
-  objs.objectSet = objects.data.makeHubItems()
+  objs.objectSet = objects.data.makeHubItems(map)
 
   objs.image = objects.image
   objs.draw = objects.draw
