@@ -8,10 +8,9 @@ door.nearby = function()
     global_platform = platforms.hub2
     global_platform.player.numKeys = 0
     music:nextTrack()
+    global_narrative = narrationlib.new({
+      "in·som·ni·a","inability to obtain sufficient sleep, especially when chronic;","difficulty in falling or staying asleep; sleeplessness."})
   end
-  global_narrative = narrationlib.new({
-    "in·som·ni·a","inability to obtain sufficient sleep, especially when chronic;","difficulty in falling or staying asleep; sleeplessness."})
-
 end
 table.insert(obj,door)
 

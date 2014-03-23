@@ -7,10 +7,9 @@ door.nearby = function()
     global_platform = platforms.hub5
     global_platform.player.numKeys = 0
     music:nextTrack()
+    global_narrative = narrationlib.new({
+      "su·i·cide","the intentional taking of one's own life."})
   end
-
-  global_narrative = narrationlib.new({
-    "su·i·cide","the intentional taking of one's own life."})
 end
 table.insert(obj,door)
 

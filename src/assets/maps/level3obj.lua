@@ -7,10 +7,10 @@ door.nearby = function()
     global_platform = platforms.hub4
     global_platform.player.numKeys = 0
     music:nextTrack()
-  end
-  global_narrative = narrationlib.new({
-    "anx·i·e·ty","distress or uneasiness of mind caused by fear of danger or misfortune."})
+    global_narrative = narrationlib.new({
+      "anx·i·e·ty","distress or uneasiness of mind caused by fear of danger or misfortune."})
 
+  end
 end
 table.insert(obj,door)
 
