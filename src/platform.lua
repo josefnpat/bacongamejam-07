@@ -1,4 +1,5 @@
 local platform = {}
+local objects = require "objects"
 
 function platform.new(map)
   local p = {}
@@ -32,6 +33,8 @@ function platform.new(map)
   p.update = platform.update
   p.draw = platform.draw
 
+  p.objects = objects.new()
+
   return p
 
 end
@@ -40,11 +43,13 @@ function platform:update(dt)
   self.map:update(dt)
   self.player:update(dt)
   self.hc_col:update(dt)
+  self.objects:update(dt)
 end
 
 function platform:draw()
   self.map:draw()
   self.player:draw()
+  self.objects:draw(dt)
 
   if debugmode then
     for y,yv in pairs(self.map_col.data) do
