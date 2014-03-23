@@ -4,6 +4,12 @@ local dialog = {}
 
 function dialog.new( conversation, index  )
   local dlog = {}
+  dlog.isDone = false
+
+  dlog.done = function( self ) 
+    -- print(self)
+    return self.isDone
+  end
 
   if conversation ~= nil then
   end
@@ -37,12 +43,26 @@ function dialog.new( conversation, index  )
 
   dlog.draw = dialog.draw
   dlog.update = dialog.update
+  dlog.skip = dialog.skip
 
   return dlog
 end
 
 function dialog:draw(x, y, w, h)
-  self.current_frame:draw(x, y, w, h)
+  if self.current_frame ~= nil then
+    self.current_frame:draw(x, y, w, h)
+  end
+end
+
+function dialog:skip()
+  self.conversation_idx = self.conversation_idx + 1
+  
+  if self.conversation_idx > table.getn(self.full_conversation) then
+    self.isDone = true
+  end
+
+  self.current_frame.frame_time = love.math.random(9) + 1
+  self.current_frame = self.full_conversation[self.conversation_idx]
 end
 
 function dialog:update(dt)
@@ -50,15 +70,10 @@ function dialog:update(dt)
   -- if current frame is out of time, move to next frame
   if self.current_frame.frame_time <= 0 then
 
-
-    self.conversation_idx = self.conversation_idx + 1
-
-    if self.conversation_idx > table.getn(self.full_conversation) then
-      self.conversation_idx = 1
+    if self.isDone then
+    else
+      self:skip()
     end
-
-    self.current_frame.frame_time = love.math.random(9) + 1
-    self.current_frame = self.full_conversation[self.conversation_idx]
   else
     self.current_frame:update(dt)
   end
