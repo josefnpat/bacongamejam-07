@@ -164,9 +164,12 @@ function dialog_frame:update(dt)
   
   -- TODO:OH MY GOD WHAT AM I DOING
   -- if audio exists in frame, play audio and remove audio from frame so it doesn't play again
-  if self.audio ~= nil then
-    love.audio.play(self.audio)
-    self.audio = nil
+  if self.audio then
+    if not self.audio:isPlaying() then
+      self.audio:play()
+    else
+      self.audio = nil
+    end
   end
 
   self.frame_time = self.frame_time - dt
