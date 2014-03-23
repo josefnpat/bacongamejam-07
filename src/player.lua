@@ -9,13 +9,17 @@ function player.new(hc)
 
   p.draw = player.draw
   p.update = player.update
-  p.collision_detect = player.collision_detect
+  p.center = player.center
   p.jump = 0
   return p
 end
 
 function player:draw()
   self.hc_obj:draw('fill')
+end
+
+function player:center()
+  return self.hc_obj:center()
 end
 
 function player:update(dt)
