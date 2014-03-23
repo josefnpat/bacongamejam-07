@@ -1,6 +1,6 @@
 local objects = {}
 objects.data = require "objectsdata"
--- objects.image = love.graphics.newImage("assets/maps/items.png")
+objects.image = love.graphics.newImage("assets/maps/items.png")
 
 objects.objectSet = {}
 
