@@ -1,6 +1,7 @@
 local objects = {}
 objects.data = require "objectsdata"
 objects.image = love.graphics.newImage("assets/maps/items.png")
+objects.image:setFilter("nearest","nearest")
 
 objects.objectSet = {}
 
