@@ -10,8 +10,8 @@ function player.new(hc,x,y)
     table.insert(p.walkquads,love.graphics.newQuad(16*i,0,16,32,256,256))
   end
   p.stand = love.graphics.newQuad(0,0,16,32,256,256)
-  p.jup = love.graphics.newQuad(0,32,16,32,256,256)
-  p.jdo = love.graphics.newQuad(16,32,16,32,256,256)
+  p.jdo = love.graphics.newQuad(0,32,16,32,256,256)
+  p.jup = love.graphics.newQuad(16,32,16,32,256,256)
 
   p.hc = hc
   p.hc_obj = hc:addRectangle(x,y,16,32)
