@@ -27,12 +27,11 @@ function player:update(dt)
   if love.keyboard.isDown("right") then
     xvect = xvect + 1
   end
-  if love.keyboard.isDown("up") and
+  if love.keyboard.isDown(" ") and
     (not self.jump or self.falljump) then
     self.jump = 0.5
     self.falljump = nil
   end
-
 
   if self.falljump then
     self.falljump = self.falljump - dt

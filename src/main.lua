@@ -2,6 +2,7 @@ sti = require "sti"
 HC = require 'HardonCollider'
 platformlib = require "platform"
 playerlib = require "player"
+narrationlib = require "narration"
 
 platforms = {}
 
@@ -11,10 +12,21 @@ function love.load()
     platforms["level"..i] = platformlib.new("assets/maps/level"..i)
   end
   global_platform = platforms.hub1
+  nar = narrationlib.new({
+    "Cannon to right of them,",
+    "Cannon to left of them,",
+    "Cannon in front of them",
+    "Volley'd and thunder'd;",
+    "Storm'd at with shot and shell,",
+    "Boldly they rode and well,",
+    "Into the jaws of Death,",
+    "Into the mouth of Hell",
+    "Rode the six hundred."})
 end
 
 function love.update(dt)
   global_platform:update(dt)
+  nar:update(dt)
 end
 
 function love.draw()
@@ -35,6 +47,7 @@ function love.draw()
     end
     love.graphics.print(level,16,16)
   end
+  nar:draw()
 end
 
 function love.keypressed(key)
