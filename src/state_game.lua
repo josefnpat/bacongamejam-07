@@ -24,6 +24,10 @@ function game:update(dt)
     global_dialogue:update(dt)
     if global_dialogue:done() then
       global_dialogue = nil
+      if global_dialogue_callback then
+        global_dialogue_callback()
+        global_dialogue_callback = nil
+      end
     end
   else
     global_platform:update(dt)

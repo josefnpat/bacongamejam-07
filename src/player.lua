@@ -10,6 +10,8 @@ function player.new(hc,x,y)
     table.insert(p.walkquads,love.graphics.newQuad(16*i,0,16,32,256,256))
   end
   p.stand = love.graphics.newQuad(0,0,16,32,256,256)
+  p.jup = love.graphics.newQuad(0,32,16,32,256,256)
+  p.jdo = love.graphics.newQuad(16,32,16,32,256,256)
 
   p.hc = hc
   p.hc_obj = hc:addRectangle(x,y,16,32)
@@ -30,6 +32,13 @@ function player:draw()
   local x,y = self:center()
   local frame = math.floor(self.walkdt)%10+1
   local q = self.walking and self.walkquads[frame] or self.stand
+  if self.jump then
+    if self.jump > 0 then
+      q = self.jdo
+    elseif self.jump < 0 then
+      q = self.jup
+    end
+  end
   love.graphics.draw(self.img,q,x,y,0,self.dir,1,8,16)
 end
 
