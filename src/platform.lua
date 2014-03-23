@@ -1,5 +1,6 @@
 local platform = {}
-local objects = require "objects"
+objects = require "objects"
+objectsdata = require "objectsdata"
 
 function platform.new(map)
   local p = {}
@@ -32,8 +33,7 @@ function platform.new(map)
 
   p.update = platform.update
   p.draw = platform.draw
-
-  p.objects = objects.new()
+  p.objects = objects.new(map)
 
   return p
 
