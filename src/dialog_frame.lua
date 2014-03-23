@@ -99,19 +99,30 @@ end
 
 function dialog_frame:draw(x, y, w, h)
 
+  -- a flag that determines whether the text box squishes to one side of the screen or another
+  -- set flag if there are two speakers
+  local align_text_box = self.left_image ~= nil and self.right_image ~= nil
+
+  local box_width = w
+  if align_text_box then
+    box_width = w * .8
+  end
+
+  local box_start = x
+  if align_text_box and self.left_image ~= nil then
+    box_start = box_start + w - box_width
+  end
+
+
   love.graphics.setColor( 255, 255, 255, 64 )
-  love.graphics.rectangle( "fill", x, y, w, h )
+  love.graphics.rectangle( "fill", box_start, y, box_width, h )
 
   love.graphics.setColor( 255, 255, 255, 128 )
-  love.graphics.rectangle( "fill", x + 4, y + 4, w - 8, h - 8 )
+  love.graphics.rectangle( "fill", box_start + 4, y + 4, box_width - 8, h - 8 )
 
   love.graphics.setColor( 0, 0, 0, 255 )
 
-  if self.is_left_active then
-    love.graphics.print( self.text, x + 12, y + 12 )
-  else
-    love.graphics.print( self.text, x + 12, y + 12 )
-  end
+  love.graphics.print( self.text, box_start + 12, y + 12 )
 
   love.graphics.setColor( 255, 255, 255, 255 )
 
