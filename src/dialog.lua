@@ -49,7 +49,7 @@ function dialog.new( conversation, index  )
 end
 
 function dialog:draw(x, y, w, h)
-  if self.current_frame ~= nil then
+  if self.current_frame ~= nil and self:done() == false then
     self.current_frame:draw(x, y, w, h)
   end
 end
@@ -59,23 +59,20 @@ function dialog:skip()
   
   if self.conversation_idx > table.getn(self.full_conversation) then
     self.isDone = true
+  else
+    self.current_frame = self.full_conversation[self.conversation_idx]
   end
-
-  self.current_frame.frame_time = love.math.random(9) + 1
-  self.current_frame = self.full_conversation[self.conversation_idx]
 end
 
 function dialog:update(dt)
-
-  -- if current frame is out of time, move to next frame
-  if self.current_frame.frame_time <= 0 then
-
-    if self.isDone then
-    else
-      self:skip()
-    end
+  if self:done() then
   else
-    self.current_frame:update(dt)
+    -- if current frame is out of time, move to next frame
+    if self.current_frame.frame_time <= 0 then
+      self:skip()
+    else
+      self.current_frame:update(dt)
+    end
   end
 end
 

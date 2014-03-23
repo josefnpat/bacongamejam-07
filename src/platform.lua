@@ -50,7 +50,9 @@ function platform:draw()
   love.graphics.setColor(255,255,255)
   self.map:draw()
   self.player:draw()
-  self.objects:draw(dt)
+
+  local x, y = global_platform.player:center()
+  self.objects:draw(x-64, y+48, 100, 100)
 
   if debugmode then
     for y,yv in pairs(self.map_col.data) do

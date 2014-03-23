@@ -7,6 +7,7 @@ end
 
 function menu:update(dt)
   menu.lib:update(dt)
+  music:update(dt)
 end
 
 function menu:draw()
