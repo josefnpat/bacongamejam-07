@@ -14,6 +14,7 @@ function nar.new(text,fade,wait)
 end
 
 function nar:draw()
+  love.graphics.setFont(fonts.medium)
   love.graphics.setColor(0,0,0,self.fade*255)
   love.graphics.rectangle("fill",0,0,
     love.graphics.getWidth(),love.graphics.getHeight())
