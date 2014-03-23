@@ -151,7 +151,7 @@ function dialog_frame:draw(x, y, w, h)
   love.graphics.print( self.text, box_start + 12, y + 12 )
 
   love.graphics.setColor( 255, 255, 255, 255 )
-  local name_y = y - 12
+  local name_y = y - 24
 
   if self.left_name ~= nil then
     love.graphics.print( self.left_name, x + 2, name_y )
