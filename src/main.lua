@@ -40,12 +40,12 @@ end
 function love.keypressed(key)
   if key == "`" then
     debugmode = not debugmode
-  elseif debugmode and 
+  elseif debugmode and (
     key == "1" or
     key == "2" or
     key == "3" or
     key == "4" or
-    key == "5" then
+    key == "5" ) then
     if love.keyboard.isDown("lshift") then
       global_platform = platforms["hub"..key]
     else
