@@ -1,7 +1,7 @@
 local obj = {}
 
 local door = objectsdata.makeDefaultObject( "door", "Door" )
-door:addToMap( "hub1", 12, 10 )
+door:addToMap( "dicktitties", 12, 10 )
 door.nearby = function()
   global_dialogue = dialoguelib.new(
     {
