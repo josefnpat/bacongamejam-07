@@ -2,6 +2,7 @@ local menu = {}
 
 function menu:init()
   menu.lib = menulib.new("menudata")
+  menu.lib:update(0) -- dirty hack
 end
 
 function menu:update(dt)
