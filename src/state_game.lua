@@ -37,7 +37,7 @@ function game:update(dt)
   elseif global_dialogue then
     global_dialogue:update(dt)
     if global_dialogue:done() then
-      global_narrative = nil
+      global_dialogue = nil
     end
   else
     global_platform:update(dt)
