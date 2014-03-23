@@ -11,9 +11,12 @@ function game:init()
   global_platform = platforms.hub1
   global_narrative = narrationlib.new({
     "re·morse","deep and painful regret for wrongdoing; compunction."})
+
+  start = 0
 end
 
 function game:update(dt)
+  start = start + dt
   music:update(dt)
   if global_narrative then
     global_narrative:update(dt)

@@ -26,6 +26,7 @@ states = {}
 states.splash = require "state_splash"
 states.menu = require "state_menu"
 states.game = require "state_game"
+states.gameover = require "state_gameover"
 
 function love.load()
   GS.registerEvents()
