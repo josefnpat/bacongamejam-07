@@ -22,6 +22,7 @@ od.makeDefaultObject = function( objName, dispName, imgIndex )
   local imageIndex = 1
 
   if imgIndex ~= nil then imageIndex = imgIndex
+  else imageIndex = 16
   end
 
   ob.image = od.makeItemQuad( imageIndex )

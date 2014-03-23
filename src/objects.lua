@@ -35,7 +35,7 @@ objects.draw = function(self, invX, invY, invW, invH)
 
   local boxSize = 20
 
-  for i=0,5,1 do
+  for i=0,3,1 do
     local invSlotX = i*(boxSize+4) +invX 
     love.graphics.setColor( 32, 32, 32, 255 )
     love.graphics.rectangle("fill", invSlotX, invY, boxSize, boxSize)

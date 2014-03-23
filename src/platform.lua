@@ -52,7 +52,7 @@ function platform:draw()
   self.player:draw()
 
   local x, y = global_platform.player:center()
-  self.objects:draw(x-64, y+48, 100, 100)
+  self.objects:draw(x-42, y+48, 100, 100)
 
   if debugmode then
     for y,yv in pairs(self.map_col.data) do
