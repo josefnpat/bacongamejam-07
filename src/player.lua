@@ -3,6 +3,14 @@ local player = {}
 function player.new(hc)
   local p = {}
 
+  p.img = love.graphics.newImage("assets/player.png")
+  p.img:setFilter("nearest","nearest")
+  p.walkquads = {}
+  for i = 0,9 do
+    table.insert(p.walkquads,love.graphics.newQuad(16*i,0,16,32,256,256))
+  end
+  p.stand = love.graphics.newQuad(0,0,16,32,256,256)
+
   p.hc = hc
   p.hc_obj = hc:addRectangle(100,100,16,32)
   p.gravity = 100
@@ -11,14 +19,18 @@ function player.new(hc)
   p.update = player.update
   p.center = player.center
   p.jump = 0
-
   p.numKeys = 0
+  p.dir = 1
+  p.walkdt = 0
 
   return p
 end
 
 function player:draw()
-  self.hc_obj:draw('fill')
+  local x,y = self:center()
+  local frame = math.floor(self.walkdt)%10+1
+  local q = self.walking and self.walkquads[frame] or self.stand
+  love.graphics.draw(self.img,q,x,y,0,self.dir,1,8,16)
 end
 
 function player:center()
@@ -27,12 +39,19 @@ end
 
 function player:update(dt)
 
+  self.walkdt = self.walkdt + dt*10
+
+  self.walking = false
   local xvect,yvect = 0,0
   if love.keyboard.isDown("left") then
     xvect = xvect - 1
+    self.dir = -1
+    self.walking = true
   end
   if love.keyboard.isDown("right") then
     xvect = xvect + 1
+    self.dir = 1
+    self.walking = true
   end
   if love.keyboard.isDown(" ") and
     (not self.jump or self.falljump) then
