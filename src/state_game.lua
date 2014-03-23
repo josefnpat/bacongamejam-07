@@ -9,7 +9,7 @@ function game:init()
     platforms["level"..i] = platformlib.new("assets/maps/level"..i)
   end
   global_platform = platforms.hub1
-  nar = narrationlib.new({
+  global_narrative = narrationlib.new({
     "Cannon to right of them,",
     "Cannon to left of them,",
     "Cannon in front of them",
@@ -19,12 +19,25 @@ function game:init()
     "Into the jaws of Death,",
     "Into the mouth of Hell",
     "Rode the six hundred."})
-    
+   global_dialogue = nil
+
 end
 
 function game:update(dt)
-  global_platform:update(dt)
-  nar:update(dt)
+
+  if global_narrative then
+    global_narrative:update(dt)
+    if global_narrative:done() then
+      global_narrative = nil
+    end
+  elseif global_dialogue then
+    global_dialogue:update(dt)
+    if global_dialogue:done() then
+      global_narrative = nil
+    end
+  else
+    global_platform:update(dt)
+  end
 end
 
 function game:draw()
@@ -45,7 +58,11 @@ function game:draw()
     end
     love.graphics.print(level,16,16)
   end
-  nar:draw()
+  if global_dialogue then
+    global_dialogue:draw()
+  elseif global_narrative then
+    global_narrative:draw()
+  end
 end
 
 function game:keypressed(key)
