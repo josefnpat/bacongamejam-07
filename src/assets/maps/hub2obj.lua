@@ -5,14 +5,14 @@ door:addToMap( "hub1", 19, 10 )
 door.nearby = function()
   global_dialogue = dialoguelib.new({
       dialog_frame.new(
-        "I fell alseep? I have so much to get done. I can't spend my time\nhavingdreams about getting a fridge food.", -- text
+        "I fell alseep? I have so much to get done. I can't spend my time\nhaving dreams about getting a fridge food.", -- text
         "adrian.png", -- left image
         nil, -- right image
         "Adrian", -- left name
         nil, -- right name
         nil, -- audio file
         4, -- length
-        nil -- false for right speaker
+        true -- false for right speaker
       ),
       dialog_frame.new(
         "Hey! ... Hey you! Hey!", -- text
@@ -32,7 +32,7 @@ door.nearby = function()
         "Fridge", -- right name
         nil, -- audio file
         4, -- length
-        nil -- false for right speaker
+        true -- false for right speaker
       )
   })
   global_dialogue_callback = function()
