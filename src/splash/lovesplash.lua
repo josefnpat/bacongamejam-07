@@ -26,7 +26,7 @@ function lovesplash.update(dt)
     lovesplash.temp_dt = lovesplash.temp_dt + dt
   end
   if not lovesplash.sound_play then
-    love.audio.play(lovesplash.whatislove)
+    lovesplash.whatislove:play()
     lovesplash.sound_play = true
   end
   if lovesplash.temp_dt >= lovesplash.total then

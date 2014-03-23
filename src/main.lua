@@ -8,8 +8,11 @@ playerlib = require "player"
 narrationlib = require "narration"
 dialoguelib = require "dialog"
 menulib = require "menu/menu"
+sfx = require "sfx"
 
 GS = require "gamestate"
+
+require "slam"
 
 states = {}
 states.splash = require "state_splash"
