@@ -47,6 +47,7 @@ function platform:update(dt)
 end
 
 function platform:draw()
+  love.graphics.setColor(255,255,255)
   self.map:draw()
   self.player:draw()
   self.objects:draw(dt)
