@@ -19,7 +19,11 @@ function game:init()
     "Into the jaws of Death,",
     "Into the mouth of Hell",
     "Rode the six hundred."})
-   global_dialogue = nil
+
+   local conversation_factory = require "conversation_maker"
+   global_dialogue = dialoguelib.new(
+     conversation_factory.make_dialog_1()
+   )
 
 end
 
@@ -58,14 +62,23 @@ function game:draw()
     end
     love.graphics.print(level,16,16)
   end
-  if global_dialogue then
-    global_dialogue:draw()
-  elseif global_narrative then
+  if global_narrative then
     global_narrative:draw()
+  elseif global_dialogue then
+    local img_height = 256
+    global_dialogue:draw(32,
+      love.graphics.getHeight()-128-32,
+      love.graphics.getWidth()-64,
+      128)
   end
 end
 
 function game:keypressed(key)
+
+  if global_dialogue then
+    global_dialogue:skip()
+  end
+
   if key == "`" then
     debugmode = not debugmode
   elseif debugmode and (
@@ -79,6 +92,12 @@ function game:keypressed(key)
     else
       global_platform = platforms["level"..key]
     end
+  end
+end
+
+function game:mousepressed()
+  if global_dialogue then
+    global_dialogue:skip()
   end
 end
 
