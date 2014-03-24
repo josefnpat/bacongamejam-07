@@ -26,7 +26,7 @@ temp.group = {"main"}
 temp.print_desc = 
   "\n\nProject Lead & Developer:\nSeppi (@josefnpat) \nMissingSentinelSoftware.com\n\n"..
   "Developer:\nWes Paugh (@wespaugh)\n\n"..
-  "Visual Artist and Writer:\nSara (@DangeLass)\n\n"..
+  "Visual Artist and Writer:\nSara (@DangerLass)\n\n"..
   "Pixel Artist & Mapper:\nBlarget (@blarget2)\n\n"
 table.insert(menuobj.actions,temp)
 
